@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Word Cloud Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <script src="WordCloud.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid header" style="background-color:#2196F3;color:#fff;height:200px;">
+        <div class="container">
+            <h1 class="pull-left">Word test Generator</h1>
+            <h3 style="clear:both;">Analyze some text</h3>
+            <p>Input any speech or text document and this will return the most commonly used words and phrases found.</p>
+        </div>
+    </div>
+
+
+    <div id="inputs">
+        <textarea id="input">paste your speech, article, or other piece of writing here</textarea>
+        <div>
+            <span>choose a depth </span>
+            <input type="text" id="depth" maxlength="2" size="2" value="5"><span> and then </span>
+            <button type="button" class="btn btn-primary" onclick="myWordCloud()">Generate Word Cloud</button>
+        </div>
+    </div>
+
+
+    <div id="output">
+    </div>
+    <br>
+    <br>
+
+</body>
+
+</html>
