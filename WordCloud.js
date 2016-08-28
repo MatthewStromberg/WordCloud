@@ -4,13 +4,15 @@ var stopWordsList = ["a", "about", "above", "after", "again", "against", "all", 
 var myWordCloud = function () {
     var dictionary = {},
         topWords = [];
-    var depth = $("#depth").val()
+    var depth = $("#depth").val();
+    isNaN(depth) ? $("#depth").addClass("error-input") : $("#depth").removeClass("error-input");
     output = "#output";
     sanitize($("#input").val()).filter(word => dictionary.hasOwnProperty(word) ? dictionary[word] += 1 : dictionary[word] = 1);
     topWords = sort(dictionary);
-    publish(output, topWords, depth);
+    $(output).html(publish(output, topWords, depth));
 };
 
+//Returns a sanitized string
 var sanitize = function (input, depth, output) {
     input = input.replace(/[0-9]|[.,\/#!$%\^&\*;–:{}=\-_`~()]/g, "");
     input = input.replace(/\r?\n|\r/g, " ");
@@ -20,16 +22,18 @@ var sanitize = function (input, depth, output) {
     return input.filter(w => stopWordsList.indexOf(w) == -1);
 };
 
+//Returns published String
 var publish = function (output, topWords, depth) {
     var outStr = "";
     if (depth > topWords.length) depth = topWords.length;
     for (var i = 0; i < depth; i++) {
-        outStr += "<span style='font-size:" + (depth - i) * 10 + "px;' title='this word was used'>" + topWords[i] + "</span><br>";
-        //console.log("Top word " + (i + 1) + " is : " + topWords[i]);
+        outStr += "<span style='font-size:" + (depth - i) * 10 + "px;' title='this word was used'>" + topWords[i] + " </span>";
     }
-    $(output).html(outStr);
+    return outStr;
+    //    $(output).html(outStr);
 };
 
+//Returns the object's keys, sorted by their values (decreasing order)
 var sort = function (list) {
     return Object.keys(list).sort(function (a, b) {
         return list[b] - list[a];

@@ -29,8 +29,26 @@ textarea#input {
 #inputs span {
     color: #2196F3;
     font-weight: bold;
-    "	
+}
 
+.header {
+    color: #fff;
+    background-image: url("http://stockclipspro.com/images/hd1080video/sensationalclouds1/14.gif");
+    background-size: 100%;
+    background-position: bottom;
+    height: 25em;
+}
+
+.myTitle {
+    padding-top: 50px;
+    text-shadow: 2px 2px 0px #000000;
+    /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    height: 5em;
+    font-size: 20px;
+}
+
+.myTitle h1 {
+    font-size: 100px;
 }
 
 #depth {
@@ -57,12 +75,9 @@ textarea#input {
     padding: 8px;
     border: 1px dashed #2196F3;
     border-radius: 24px;
-    overflow-x: auto;
-    -ms-transform: rotate(7deg);
-    /* IE 9 */
-    -webkit-transform: rotate(7deg);
-    /* Chrome, Safari, Opera */
-    transform: rotate(7deg);
+    overflow: auto;
+    height: auto;
+    word-wrap: break-word;
 }
 
 #output span {
