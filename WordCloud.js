@@ -13,8 +13,8 @@ var myWordCloud = function () {
 };
 
 //Returns a sanitized string
-var sanitize = function (input, depth, output) {
-    input = input.replace(/[0-9]|[.,\/#!$%\^&\*;–:{}=\-_`~()]/g, "");
+var sanitize = function (input) {
+    input = input.replace(/[0-9]|[.,\/#!$+|"?><\]['@%\^&\*;–:{}=\-_`~()]/g, "");
     input = input.replace(/\r?\n|\r/g, " ");
     input = input.replace(/\s\s+/g, " ");
     input = input.toLowerCase();
@@ -30,7 +30,6 @@ var publish = function (output, topWords, depth) {
         outStr += "<span style='font-size:" + (depth - i) * 10 + "px;' title='this word was used'>" + topWords[i] + " </span>";
     }
     return outStr;
-    //    $(output).html(outStr);
 };
 
 //Returns the object's keys, sorted by their values (decreasing order)
