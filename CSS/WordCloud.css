@@ -122,11 +122,12 @@ textarea#input {
 }
 
 .extra {
+    display: inline;
     margin: 0 auto;
 }
 
 .extra div {
-    display: inline-block;
+    display: inline-table;
 }
 
 @media (max-width: 770px) {

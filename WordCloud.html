@@ -25,19 +25,23 @@
     <div id="inputs">
         <textarea id="input" placeholder="Paste your speech, article, or other piece of writing here"></textarea>
         <div>
-            <span>choose a depth </span>
+            <span>Choose a depth </span>
             <input type="text" id="depth" maxlength="2" size="2" value="5"><span> and then </span>
             <button type="button" class="btn btn-primary" onclick="myWordCloud()">Generate Word Cloud</button>
         </div>
         <div class="extra">
             <div class="omit">
-                <span>Choose any words you'd like to omit! Must separated by commas.</span><br>
-                <textarea id="omittedWords" placeholder="Enter words to be omitted"></textarea><br>
-                <span> Certain words are already omitted. Click <a href="/omittedWords.txt">here</a> to see those words.</span>
+                <span>Choose any words you'd like to omit! Must separated by commas.</span>
+                <br>
+                <textarea id="omittedWords" placeholder="Enter words to be omitted"></textarea>
+                <br>
+                <span><i> Certain words are already omitted. Click <a href="/omittedWords.txt">here</a> to see those words. </i></span>
             </div>
             <div class="search">
-                <span>Search for a specific word:</span><br>
-                <textarea id="specific" placeholder="Enter word to search for"></textarea><a onclick="specificSearch()" class="btn btn-primary">Search</a><br>
+                <span>Search for a specific word:</span>
+                <br>
+                <input id="specific" placeholder="Enter word to search for"><a onclick="specificSearch()" class="btn btn-primary">Search</a>
+                <br>
                 <span id="searchCount" style="visibility:hidden;">Hidden</span>
             </div>
         </div>
