@@ -8,6 +8,7 @@
     margin-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
+    text-align: center;
 }
 
 textarea#input {
@@ -21,9 +22,8 @@ textarea#input {
 }
 
 #inputs div {
-    width: 100%;
     margin-top: 10px;
-    text-align: center;
+    text-align: ri;
 }
 
 #inputs span {
@@ -96,6 +96,37 @@ textarea#input {
 
 #output span:nth-child(2n+2) {
     color: red;
+}
+
+#omittedWords {
+    max-width: 75%;
+    max-height: 100px;
+}
+
+.omit a {
+    text-decoration: underline;
+}
+
+.omit,
+.search {
+    min-width: 38em;
+    min-height: 7em;
+    border: 1px solid #00A2FF;
+    margin: -2.5px;
+}
+
+.search a {
+    margin-left: 50px;
+    position: absolute;
+    margin-top: 5px;
+}
+
+.extra {
+    margin: 0 auto;
+}
+
+.extra div {
+    display: inline-block;
 }
 
 @media (max-width: 770px) {

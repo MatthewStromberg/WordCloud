@@ -18,25 +18,37 @@
         <div class="container myTitle">
             <h1>Word Cloud Generator</h1>
             <h3 style="clear:both;">Analyze some text</h3>
-            <p>Input any speech or text document and this will return the most commonly used words and phrases found.</p>
+            <p>Input any speech or text document and this will return the most commonly used words found.</p>
         </div>
     </div>
 
-
     <div id="inputs">
-        <textarea id="input">paste your speech, article, or other piece of writing here</textarea>
+        <textarea id="input" placeholder="Paste your speech, article, or other piece of writing here"></textarea>
         <div>
             <span>choose a depth </span>
             <input type="text" id="depth" maxlength="2" size="2" value="5"><span> and then </span>
             <button type="button" class="btn btn-primary" onclick="myWordCloud()">Generate Word Cloud</button>
+        </div>
+        <div class="extra">
+            <div class="omit">
+                <span>Choose any words you'd like to omit! Must separated by commas.</span><br>
+                <textarea id="omittedWords" placeholder="Enter words to be omitted"></textarea><br>
+                <span> Certain words are already omitted. Click <a href="/omittedWords.txt">here</a> to see those words.</span>
+            </div>
+            <div class="search">
+                <span>Search for a specific word:</span><br>
+                <textarea id="specific" placeholder="Enter word to search for"></textarea><a onclick="specificSearch()" class="btn btn-primary">Search</a><br>
+                <span id="searchCount" style="visibility:hidden;">Hidden</span>
+            </div>
         </div>
     </div>
 
 
     <div id="output">
     </div>
-    <br>
-    <br>
+
+    <div id="footer">
+    </div>
 
 </body>
 
